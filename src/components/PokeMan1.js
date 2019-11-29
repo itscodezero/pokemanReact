@@ -3,6 +3,19 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //import sprites from '../assets/sprites.png';
 
 export default class PokeMan1 extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+
+        }
+        var myItemObjectArray = new Array();
+        var currentItemIndex = 5;
+    }
+
+
+
+
     render() {
         const { data } = this.props;
         return (
@@ -18,7 +31,7 @@ export default class PokeMan1 extends Component {
                                 data && data.map((data1, index) => (
 
 
-                                    <div className="pokemon--species" key={index}>
+                                    <div className="pokemon--species" id="image_slider" key={index}>
                                         <div className="pokemon--species--name text-left" > {data1.name.toUpperCase()}    {index + 1}</div>
                                         <div className="pokemon--species--container">
                                             <div className="pokemon--species--sprite">
@@ -31,7 +44,8 @@ export default class PokeMan1 extends Component {
                                 ))
                             }
                             <button className="button" >Prev</button>
-                            <button className="button">Next</button>
+                            <button className="button" style={{ float: 'right' }} onClick={this.next()}>Next</button>
+
                         </div>
 
                     </div>
