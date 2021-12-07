@@ -16,6 +16,7 @@ export default class PokeManApiCall extends Component {
         axios.get('https://pokeapi.co/api/v2/pokemon/')
             .then(response => {
                 console.log(response);
+                console.log("workflow test 1")
                 this.setState({ posts: response.data.results })
             })
             .catch(error => { console.log(error) })
